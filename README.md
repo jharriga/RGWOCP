@@ -37,6 +37,10 @@ rook-ceph-rgw service listening at = 172.30.92.76:8080
 ```
 $ helm delete --purge ccbhelm
 $ oc delete project ccb
+$ oc delete deployment.apps/tiller-deploy -n kube-system
+$ oc delete service/tiller-deploy -n kube-system
+$ oc delete  serviceaccounts tiller -n kube-system
+$ oc delete clusterrolebinding tiller -n kube-system
 $ oc delete project rook-ceph
 $ openshift-install destroy cluster --dir mycluster/
 ```
